@@ -1,0 +1,5 @@
+.checkbox{
+  display:flex;
+  margin-bottom: 15rpx;
+
+}

@@ -1,0 +1,17 @@
+<import src="../../template/calendar/index.wxml"/>
+<template is="calendar" data="{{...calendar}}" />
+
+<view class="timetip" id="timechoice">
+  {{date}}
+</view>
+<view class="detailed">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image src="../../images/point.png" style="margin-right: 15px;vertical-align: middle;width:10px; height: 10px;"></image>
+        </view>
+        <view class="weui-cell__bd">已为第一个任务打卡</view>
+        <view class="weui-cell__ft" style='font-size:14px'>12:00:00</view>
+    </view>
+  </view>
+</view>

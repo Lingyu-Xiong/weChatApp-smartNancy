@@ -1,0 +1,16 @@
+
+<image mode="scaleToFill" src="../../images/top2.png" style="width:100%;height:80px"></image>
+  <view class="reco"> 
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}">
+        <image src='../../images/point.png' style='width:15px;height:15px;vertical-align:middle;margin-right:10px'></image>{{item}}
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="tipsbox"></view>
+<!--<image mode="scaleToFill" src="../../images/direct.png" style="width:125px;height:150px;"></image>-->
+  <view class="">
+
+  </view>
+  
+

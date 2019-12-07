@@ -1,0 +1,39 @@
+<view class="picture">
+  <image src='../../images/inputheight.png'></image>
+</view>
+
+<!--<view class='input'>
+  <input type='number' bindinput='getHeight' auto-focus='true'></input>
+</view>-->
+
+<picker range="{{heights}}" value="{{index}}" bindchange="bindChange">
+  <view class="input"><view>{{heights[index]}}cm</view></view>
+</picker>
+<!--
+<view>
+  <view class="input">
+    <view bindtap="open">{{heights[index]}}cm</view>
+  </view>
+
+  <view wx:if="{{condition}}" class="jobpicker">
+    <picker-view indicator-style="height: 30px;" style="width: 100%; height: 200px;" value="{{index}}" bindchange="bindChange" class="jobbody">
+      <view class="jobheader">
+        <view bindtap="open" class="job-cancel">取消</view>
+        <view bindtap="open" class="job-true">确定</view>
+      </view>
+      <picker-view-column>
+        <view wx:for="{{heights}}" style="font-size:16px;text-align:center">{{heights[index]}}cm</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
+-->
+
+<view class='tips'>
+  <text>您的身高</text>
+</view>
+
+<!--<view wx:if="{{!condition}}"class='next' bindtap='weightnext'>下一步</view>-->
+<view class="nextbtn">
+  <image mode="aspectFit" src="../../images/next.png" style="width:30%;height:100px" wx:if="{{!condition}}" bindtap='weightnext'></image>
+</view>

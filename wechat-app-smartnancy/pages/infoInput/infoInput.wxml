@@ -1,0 +1,95 @@
+ <modal hidden="{{hidden}}" title="Welcome" bindconfirm="confirm" no-cancel="{{nocancel}}">
+  为了更好地为您提供个性化的养生秘诀，Nancy需要先了解一下您的基本信息，请认真填写哦！
+</modal>
+
+<view class="container">
+  <view class="group">
+    <form bindsubmit="Submit">
+      <view class="group-body">
+        <view class="input-list">
+
+
+          <view class="input-item">
+            <text class="needed">*</text>
+            <text class="input-item-label">性别</text>
+            <view class="input-item-content">
+              <radio-group name="gender">
+                <label>
+                  <radio color="{{Color}}" checked="true" value="0" />男</label>
+                <label>
+                  <radio color="{{Color}}" value="1" />女</label>
+              </radio-group>
+            </view>
+          </view>
+
+          <view class="input-item">
+            <text class="needed">*</text>
+            <text class="input-item-label">出生年月</text>
+            <picker class="input-item-content" mode="date" value="{{date}}" start="1905-09-01" end="2019-09-01" bindchange="bindDateChange" name="birthday">{{date}}</picker>
+          </view>
+
+          <view class="input-item">
+            <text class="needed">*</text>
+            <text class="input-item-label">居住城市</text>
+            <picker class="input-item-content" bindchange='bindRegionChange' mode='region' value='{{region}}' name="city">{{region[0]}},{{region[1]}},{{region[2]}}</picker>
+          </view>
+
+          <item class="input-item">
+            <text class="needed">*</text>
+            <text class="input-item-label">职业</text>
+            <picker class="input-item-content" bindchange="bindJobChange" value="{{index}}" range="{{array}}" name="profession_id">{{array[index]}}</picker>
+          </item>
+
+          <item class="input-item">
+            <text class="needed">*</text>
+            <text class="input-item-label">健康状况</text>
+            <checkbox-group class="input-item-content" bindchange="checkboxChange" name="disease_id">
+              <label class="checkbox" wx:for="{{status}}">
+                <checkbox color="{{Color}}" value="{{item.id}}"/>{{item.name}}
+              </label>
+            </checkbox-group>
+          </item>
+
+          <item class="input-item">
+            <text class="input-item-label">疾病指标</text>
+            <view class="input-item-content">
+            <view >
+            <view class="" wx:for="{{selectstatus}}" >
+            {{item.name}}
+            <view class="para" wx:for="{{item.parameters}}" wx:for-item="parameters"><view class="paraname">{{parameters.name}}</view> <input bindinput="inputpara" name="{{parameters.id}}" class="inputpara" data-key="{{parameters.id}}" ></input></view>
+            </view>
+            </view>
+
+            </view>
+          </item>
+
+          <item class="input-item">
+            <text class="needed">*</text>
+            <text class="input-item-label">身高(cm)</text>
+            <view class="input-item-content">
+              <input type="text" placeholder="请输入身高值" bindinput="inputHeight" name="height"></input>
+            </view>
+          </item>
+
+          <item class="input-item">
+            <text class="needed">*</text>
+            <text class="input-item-label">体重(kg)</text>
+            <view class="input-item-content">
+              <input type="text" placeholder="请输入体重值" bindinput="inputWeight" name="weight"></input>
+            </view>
+          </item>
+
+
+        </view>
+        <!--input-list end-->
+      </view>
+      <!--group-body end-->
+      <view class="needed-tips">
+        <text class="needed">*</text>为必填项</view>
+      <button class="btn-blue" hover-class="other-button-hover" form-type="submit" disabled="{{submited}}">提交</button>
+    </form>
+    <!--form end-->
+  </view>
+  <!--group end-->
+</view>
+<!--container end-->

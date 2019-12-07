@@ -1,0 +1,173 @@
+<view class='pictures'>
+  <canvas canvas-id="areaCanvas" style='margin:20px auto;height:200px;width:100%;' bindtouchstart="touchHandler"></canvas>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="onegrid left">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/healthscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>
+                    指标健康度
+                    <text class="scoretext redtext" wx:if="{{healthscore<=60}}">{{healthscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{healthscore<=80}}">{{healthscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{healthscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{healthscore<=60}}' style='width:{{healthscore}}%'></view>
+                      <view class='yellow' wx:elif='{{healthscore<=80}}' style='width:{{healthscore}}%'></view>
+                      <view class='green' wx:else style='width:{{healthscore}}%'></view>
+                      
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="health" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="onegrid right">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/diseasescore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>慢病风险度
+                    <text class="scoretext redtext" wx:if="{{diseasescore<=60}}">{{diseasescore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{diseasescore<=80}}">{{diseasescore}}</text>
+                    <text class="scoretext greentext" wx:else>{{diseasescore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{diseasescore<=60}}' style='width:{{diseasescore}}%'></view>
+                      <view class='yellow' wx:elif='{{diseasescore<=80}}' style='width:{{diseasescore}}%'></view>
+                      <view class='green' wx:else style='width:{{diseasescore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="disease" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="onegrid left">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/doctorscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>医生依从性
+                    <text class="scoretext redtext" wx:if="{{complyscore<=60}}">{{complyscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{complyscore<=80}}">{{complyscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{complyscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{complyscore<=60}}' style='width:{{complyscore}}%'></view>
+                      <view class='yellow' wx:elif='{{complyscore<=80}}' style='width:{{complyscore}}%'></view>
+                      <view class='green' wx:else style='width:{{complyscore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="doctor" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="onegrid right">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/dietscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>饮食健康度
+                    <text class="scoretext redtext" wx:if="{{dietscore<=60}}">{{dietscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{dietscore<=80}}">{{dietscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{dietscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{dietscore<=60}}' style='width:{{dietscore}}%'></view>
+                      <view class='yellow' wx:elif='{{dietscore<=80}}' style='width:{{dietscore}}%'></view>
+                      <view class='green' wx:else style='width:{{dietscore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="diet" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="onegrid left">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/bodyscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>身体活跃度
+                    <text class="scoretext redtext" wx:if="{{bodyscore<=60}}">{{bodyscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{bodyscore<=80}}">{{bodyscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{bodyscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{bodyscore<=60}}' style='width:{{bodyscore}}%'></view>
+                      <view class='yellow' wx:elif='{{bodyscore<=80}}' style='width:{{bodyscore}}%'></view>
+                      <view class='green' wx:else style='width:{{bodyscore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="body" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="onegrid right">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/dietdoctorscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>健康素养度
+                    <text class="scoretext redtext" wx:if="{{literacyscore<=60}}">{{literacyscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{literacyscore<=80}}">{{literacyscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{literacyscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{literacyscore<=60}}' style='width:{{literacyscore}}%'></view>
+                      <view class='yellow' wx:elif='{{literacyscore<=80}}' style='width:{{literacyscore}}%'></view>
+                      <view class='green' wx:else style='width:{{literacyscore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="literacy" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+  </view> 
+</view>

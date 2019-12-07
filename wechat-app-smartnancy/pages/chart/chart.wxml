@@ -1,0 +1,68 @@
+<view class="page">
+  <progress percent="{{prograssPrecent}}" activeColor="#ff9900" background-color="#e5f7fe" stroke-width="6" show-info='true' />
+  <view class="container">
+    <view class="top">
+    </view>
+    <view class="card">
+      <view class="card-top">
+        <view class="part">{{questions[index].part_name}}</view>
+        <image src="{{dingsrc}}" class="imageq"></image>
+        <view class="prograss">{{questions[index].part_id}}/{{questions[index].part_num}}</view>
+      </view>
+      <view class="answer-box">
+        <view class="answer">
+          <view class="item">
+            <view class="qusetion">
+              <view hidden="{{questions[index].hiddenques}}">{{questions[index].question}}</view>
+              <image hidden="{{questions[index].hiddenimg}}" src="{{questions[index].question_url}}" style="width:100%" mode="widthFix"></image>
+            </view>
+          </view>
+
+          <view wx:if="{{!questions[index].multi_choice}}">
+            <radio-group class="radio-group" bindchange="radioChange">
+              <label class="radio" wx:for="{{questions[index].option}}" wx:for-item="option">
+                <radio color="{{Color}}" value="{{option.answerId}}" checked='{{option.check}}' data-setFalse="{{option.setFalse}}" />{{option.answer}}
+              </label>
+            </radio-group>
+          </view>
+
+          <view wx:if="{{questions[index].multi_choice}}">
+            <checkbox-group class="radio-group" bindchange="radioChange">
+              <label class="radio" wx:for="{{questions[index].option}}" wx:for-item="option">
+                <checkbox color="{{Color}}" value="{{option.answerId}}" checked='{{option.check}}' data-setFalse="{{option.setFalse}}" />{{option.answer}}
+              </label>
+            </checkbox-group>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view style="width:100%;height:70px"></view>
+
+    <view hidden="{{!lnhide}}" class="btnbox">
+      <image src="../../images/lastbtn.png" style="width:25px;height:25px;margin-top:22.5px;margin-bottom:22.5px;margin-left:20px"></image>
+      <button class="lastbtn" plain="true" style="border:none;font-size:16px" bindtap='toLast' disabled="{{dislast}}">上一题</button>
+      <image src="../../images/line.png" style="width:10px;height:25px;margin-top:22.5px;margin-bottom:22.5px"></image>
+      <button class="submitbtn" plain="true" style="border:none;font-size:16px" bindtap='submitanswer' disabled="{{dissub}}">完成</button>
+    </view>
+    <view hidden="{{lnhide}}" class="btnbox">
+      <image src="../../images/lastbtn.png" style="width:25px;height:25px;margin-top:22.5px;margin-bottom:22.5px;margin-left:20px"></image>
+      <button class="lastbtn" plain="true" style="border:none;font-size:16px" bindtap='toLast' disabled="{{dislast}}">上一题</button>
+      <image src="../../images/line.png" style="width:10px;height:25px;margin-top:22.5px;margin-bottom:22.5px"></image>
+      <button class="nextbtn" plain="true" style="border:none;font-size:16px" bindtap='toNext' disabled="{{disnext}}">下一题</button>
+      <image src="../../images/nextbtn.png" style="width:25px;height:25px;margin-top:22.5px;margin-bottom:22.5px;margin-right:20px"></image>
+    </view>
+
+  </view>
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-content">
+      您已经完成了{{questions[index-1].part_name}}的问答！本部分{{questions[index-1].part_desc}}将在所有部分答题结束之后呈现，请您进入下一部分。
+      <view class="modal-footer">
+        <!--<view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view> -->
+        <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

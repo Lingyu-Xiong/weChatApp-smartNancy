@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <!--<canvas canvas-id="myCanvas" style="width:350px;height: 250px;"/>-->
+  <image mode="aspectFit" src="{{imgsrc}}" style="width:95%;height:460px"></image>
+
+
+
+ <view class="nextbtn">
+ 
+<view class="hisreco" hidden="{{hisrecohide}}"><image mode="scaleToFill" src='../../images/historyreco.png' style="width:100px;height:29px;" bindtap='getHisreco'></image></view> 
+
+ <button class="userinfo" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo"><image mode="aspectFit" src="../../images/start.png" style="width:50%;height:100px" ></image></button></view>
+  <!--<image mode="aspectFit" src="../../images/box.png" style="width:60%;height:180px" bindtap="newUser"></image>-->
+  <!--<view class="btn-blue" bindtap="newUser">我们开始吧！</view>-->
+ 
+</view>

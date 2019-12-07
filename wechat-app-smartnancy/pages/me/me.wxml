@@ -1,0 +1,50 @@
+<view class="top">
+  <image src="{{userPic}}" class="userPic"></image> 
+  <view class="introduction">
+    <view>{{nickName}}</view>
+    <view>江西赣州</view>
+    <view>ID 4941643</view>
+  </view>
+</view>
+
+<view class='content'>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url='../myreport/myreport' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="../../images/myreport.png" style="margin-right: 15px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的报告</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url='../myintegral/myintegral' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="../../images/integral.png" style="margin-right: 15px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的积分</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url='../myreward/myreward' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="../../images/reward.png" style="margin-right: 15px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的勋章</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="../../images/message.png" style="margin-right: 15px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的留言</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+          <image src="../../images/questions.png" style="margin-right: 15px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">常见问题</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+    
+    
+  </view>
+</view>

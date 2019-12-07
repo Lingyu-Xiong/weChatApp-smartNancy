@@ -1,0 +1,17 @@
+<view class='main' style='min-height:{{windowHeight}}px'>
+  <block wx:for='{{allYears}}' wx:for-item="years">
+    <view class="historyyear">
+      <image src='../../images/time.png'></image>
+      <text>{{years}}年</text>
+    </view>
+    <view class='history' style='background:url(../../images/line.png) repeat-y 58px 38px;'>
+      <view class='historypoint' style='background:url(../../images/timepoint.png) no-repeat;background-size:20px 20px;background-origin:content-box;' wx:for='{{allDates}}' wx:for-item="days">
+        <block wx:if='{{days.year==years}}'>
+          <text class='month'>{{days.day}}\n{{days.time}}</text>
+          <navigator url="../reportdetailshistory/reportdetailshistory?qrid={{days.qrId}}&userid={{days.userid}}"><button style='margin:0 20px 0 30px'>综合评估</button></navigator>
+          <navigator url="../recommendationhistory/recommendationhistory?qrid={{days.qrId}}&userid={{days.userid}}"><button>健康建议</button></navigator>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

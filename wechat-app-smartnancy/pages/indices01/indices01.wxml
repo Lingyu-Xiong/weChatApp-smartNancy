@@ -1,0 +1,24 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">{{status[index].disease}}</view>
+    <view class="page__desc">请输入您的疾病指标，尽可能完整地填写有助于Nancy给您最精准的评价。</view>
+  </view>
+  <form class="page__bd page__bd_spacing" bindsubmit="indicesSubmit">
+    <view class="weui-cell weui-cell-other  weui-cell_input" wx:for="{{status[index].indices}}" wx:if="{{!ishighblood}}">
+      <view class="weui-label">{{item.indices}}({{item.unit}})</view>
+      <input class="weui-input weui-input-other" placeholder="" name="{{item.d_ind_id}}" value="" type="digit" />
+    </view>
+    <view class="weui-cell weui-cell-other  weui-cell_input" wx:if="{{ishighblood}}">
+      <view class="weui-label">收缩压/舒张压（mmHg）</view>
+      <view class="weui-flex">
+      <input class="weui-input weui-input-other" placeholder="" name="4" value="" type="digit" style="width:50px" focus='{{firstfocus}}' bindinput='firstcontent'/><view style="margin-top:1em;height:1.2em;font-size:16px">/</view>
+      <input class="weui-input weui-input-other" focus='{{secondfocus}}' placeholder="" name="5" value="" type="digit" style="width:50px"/>
+      </view>
+    </view>
+    <view style="width:100%;height:100px"></view>
+    <view class="weui-flex btn-box">
+      <button class="weui-flex__item" plain="true" style="border:none;font-size:16px" form-type="submit"></button>
+
+    </view>
+  </form>
+</view>

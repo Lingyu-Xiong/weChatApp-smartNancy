@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/gender/gender",
+    "pages/inputweight/inputweight",
+    "pages/inputjob/inputjob",
+    "pages/inputcity/inputcity",
+    "pages/inputheight/inputheight",
+    "pages/inputbirth/inputbirth",
+    "pages/disease/disease",
+    "pages/indices01/indices01",
+    "pages/indices02/indices02",
+    "pages/chart/chart",
+    "pages/recommendation/recommendation",
+    "pages/recommendationhistory/recommendationhistory",
+    "pages/recolist/recolist",
+    "pages/reportdetails/reportdetails",
+    "pages/reportdetailshistory/reportdetailshistory",
+    "pages/me/me",
+    "pages/myreport/myreport",
+    "pages/index/index",
+    "pages/clock/clock",
+    "pages/infoInput/infoInput",
+    "pages/myintegral/myintegral",
+    "pages/myreward/myreward",
+    "pages/history/history",
+    "pages/timeline/timeline",
+    "pages/logs/logs",
+    "pages/searchserver/searchserver"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f4f6f9",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

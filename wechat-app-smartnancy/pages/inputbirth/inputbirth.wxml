@@ -1,0 +1,22 @@
+<view class="picture">
+  <image src='../../images/inputbirth.png'></image>
+</view>
+
+
+  <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{jobs}}">
+      <view class="picker">
+          {{jobs[index]}}
+      </view>
+  </picker> -->
+  <picker mode="date" value="{{date}}" bindchange="listenerDatePickerSelected">
+    <view class="input"><view>{{date}}</view></view>
+  </picker>
+
+
+
+<view class='tips'>
+  <text>请选择您的出生年月</text>
+</view>
+
+<!--<view class='next' bindtap='citynext'>下一步</view>-->
+<view class="nextbtn"><image mode="aspectFit" src="../../images/next.png" style="width:30%;height:100px" bindtap='citynext'></image></view>

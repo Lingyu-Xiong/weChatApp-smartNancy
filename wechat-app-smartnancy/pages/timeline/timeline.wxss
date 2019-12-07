@@ -1,0 +1,60 @@
+
+.main{
+  padding-top: 10px;
+  background: -webkit-linear-gradient(#e5f7fe, #fff); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#e5f7fe, #fff); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#e5f7fe, #fff); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#e5f7fe, #fff); /* 标准的语法（必须放在最后） */
+}
+
+.historyyear{
+  padding-left: 60px;
+}
+
+.historyyear image{
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.historyyear text{
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+.history{
+  padding: 10px 0;
+}
+
+.historypoint{
+  padding-left: 70px;
+  position: relative;
+  margin: 15px 0;
+}
+
+.historypoint button{
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  position: unset;
+  background: #2fcc85;
+  color: #fff;
+}
+
+button::after{
+  width: unset;
+  left: 100000;
+  display: none;
+}
+
+.month{
+  position: absolute;
+  left: 10px;
+  top: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+navigator{
+  display: inline-block;
+}

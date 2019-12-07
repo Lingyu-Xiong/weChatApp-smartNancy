@@ -1,0 +1,77 @@
+<view class="page">
+ <!-- <image mode="scaleToFill" src="../../images/top2.png" style="width:100%;height:80px"></image> -->
+  <view class="Tips">
+    <image src="../../images/clock-record.png" style="width:30px;height:30px"></image>
+    <text style="font-size:30rpx;color:red">Nancy为您定制以下{{num}}条健康建议
+                       （按重要性程度由强到弱排序）\n快来选选哪些是您能做到的吧！
+    </text>
+  </view>
+
+  <view style="display:flex;justify-content:flex-end; padding-top:50px;"><image mode="scaleToFill" src='../../images/historyreco.png' style="width:100px;height:29px;" bindtap='getHisreco'></image></view>
+
+  <view class="reco">
+    <checkbox-group bindchange="checkboxChange" wx:if="{{items.length<6}}">
+      <view class="checkbox" wx:for="{{items}}">
+        <checkbox color="{{Color}}" value="{{item.rdId}}" checked="{{item.checked}}" />{{item.recommendationDetails}}
+         <view class="audio">
+         <image style="width:15px; height:15px;" mode = 'aspectFit ' src="{{item.note == '' ? '../../images/p1.png': '../../images/n1.png'}}"></image>
+         </view >
+      </view>
+    </checkbox-group>
+    <checkbox-group bindchange="checkboxChange" wx:if="{{items.length>5}}">
+      <view wx:if="{{!loadmore}}">
+        <label class="checkbox">
+          <checkbox color="{{Color}}" value="{{items[0].rdId}}" checked="{{items[0].checked}}" />{{items[0].recommendationDetails}} <view class="audio">
+         <image style="width:15px; height:15px;" mode = 'aspectFit ' src="{{items[0].note == '0' ? '../../images/p1.png': '../../images/n1.png'}}"></image>
+         </view >
+        </label>
+        <label class="checkbox">
+          <checkbox color="{{Color}}" value="{{items[1].rdId}}" checked="{{items[1].checked}}" />{{items[1].recommendationDetails}} <view class="audio">
+         <image style="width:15px; height:15px;" mode = 'aspectFit ' src="{{items[1].note == '0' ? '../../images/p1.png': '../../images/n1.png'}}"></image>
+         </view >
+        </label> 
+        <label class="checkbox">
+          <checkbox color="{{Color}}" value="{{items[2].rdId}}" checked="{{items[2].checked}}" />{{items[2].recommendationDetails}}<view class="audio">
+         <image style="width:15px; height:15px;" mode = 'aspectFit ' src="{{items[2].note == '0' ? '../../images/p1.png': '../../images/n1.png'}}"></image>
+         </view >
+        </label> 
+        <label class="checkbox">
+          <checkbox color="{{Color}}" value="{{items[3].rdId}}" checked="{{items[3].checked}}" />{{items[3].recommendationDetails}}<view class="audio">
+         <image style="width:15px; height:15px;" mode = 'aspectFit ' src="{{items[3].note == '0' ? '../../images/p1.png': '../../images/n1.png'}}"></image>
+         </view >
+         
+        </label> 
+        <label class="checkbox">
+          <checkbox color="{{Color}}" value="{{items[4].rdId}}" checked="{{items[4].checked}}" />{{items[4].recommendationDetails}}<view class="audio">
+         <image style="width:15px; height:15px;" mode = 'aspectFit ' src="{{items[4].note == '0' ? '../../images/p1.png': '../../images/n1.png'}}"></image>
+         </view >
+        </label> 
+      </view>
+      <label class="checkbox" wx:for="{{items}}" wx:if="{{loadmore}}">
+        <checkbox color="{{Color}}" value="{{item.rdId}}" checked="{{item.checked}}" />{{item.recommendationDetails}} <view class="audio">
+         <image style="width:15px; height:15px;" mode = 'aspectFit ' src="{{item.note == '0' ? '../../images/p1.png': '../../images/n1.png'}}"></image>
+         </view >
+      </label>
+       
+    </checkbox-group>
+  </view>
+
+  <view class="loadmore" bindtap="loadmore" hidden="{{loadmore}}">
+    <image src="../../images/select.png" style="width:20px;height:20px"></image>
+    <text style="color:#2fcc85">获取全部建议</text>
+  </view>
+  <view style="width:100%;height:10px"></view>
+  <!--<view class="tipsbox">
+<image mode="scaleToFill" src="../../images/direct.png" style="width:125px;height:150px;"></image></view>-->
+
+    <!--<button class="btn-blue" hover-class="other-button-hover" bindtap="getRecommendation">才不要</button>-->
+    <!--<view class="next" bindtap="getRecommendation">获取报告</view>-->
+
+
+    <!--<view class="nextbtn">
+      <image mode="aspectFit" src="../../images/repnext.png" style="width:100%;height:100px" bindtap='getRecommendation'></image>
+    </view>-->
+<view style="display:flex;position:fixed;bottom:0;right:0;justify-content:flex-end">
+<image mode="aspectFit" src="../../images/nutritionist.png" style="width:80px;height:96px" bindtap='tosearchserver'></image></view>
+
+</view>

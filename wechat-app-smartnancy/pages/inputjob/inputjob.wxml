@@ -1,0 +1,15 @@
+<view class="picture">
+  <image src='../../images/inputjob.png'></image>
+</view>
+
+
+<picker range="{{jobs}}" value="{{index}}" bindchange="bindChange">
+  <view class="input"><view>{{jobs[index]}}</view></view>
+</picker>
+
+<view class='tips'>
+  <text>您的职业</text>
+</view>
+
+<!--<view wx:if="{{!condition}}" class='next' bindtap='heightnext'>下一步</view>-->
+<view class="nextbtn"><image mode="aspectFit" src="../../images/next.png" style="width:30%;height:100px" wx:if="{{!condition}}" bindtap='heightnext'></image></view>

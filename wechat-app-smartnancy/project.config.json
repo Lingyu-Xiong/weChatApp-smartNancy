@@ -1,0 +1,127 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wx111bf9d9e3d34cd6",
+	"projectname": "smartnancySVN%E5%8F%91%E5%B8%83%E7%89%88",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "chart",
+					"pathName": "pages/chart/chart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "info",
+					"pathName": "pages/infoInput/infoInput",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "reco",
+					"pathName": "pages/recommendationhistory/recommendationhistory",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "disease",
+					"pathName": "pages/disease/disease",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "reportdetail",
+					"pathName": "pages/reportdetails/reportdetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "clock",
+					"pathName": "pages/clock/clock",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "history",
+					"pathName": "pages/history/history",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "timeline",
+					"pathName": "pages/timeline/timeline",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "reportdetailshistory",
+					"pathName": "pages/reportdetailshistory/reportdetailshistory",
+					"query": ""
+				},
+				{
+					"id": 9,
+					"name": "indices01",
+					"pathName": "pages/indices01/indices01",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "recolist",
+					"pathName": "pages/recolist/recolist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "recommedtation",
+					"pathName": "pages/recommendation/recommendation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/inputcity",
+					"pathName": "pages/inputcity/inputcity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "reportdetail",
+					"pathName": "pages/reportdetails/reportdetails",
+					"scene": null
+				}
+			]
+		}
+	}
+}

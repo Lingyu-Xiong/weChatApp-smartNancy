@@ -1,0 +1,11 @@
+@import '../../template/calendar/index.wxss';
+
+.timetip{
+	display: inline-table;
+	padding: 10px 30px 10px 20px;
+	background-color: #2fcc85;
+	border-radius: 0 20px 20px 0;
+	margin: 15px 0;
+	color: #fff;
+  font-size: 28rpx;
+}

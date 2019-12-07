@@ -1,0 +1,76 @@
+.container{
+  padding: 0;
+}
+.needed{
+  color:red;
+}
+.needed-tips{
+  padding: 20rpx 20rpx 0 0;
+	line-height: 1;
+	display: flex;
+  justify-content:flex-end;
+	font-size: 30rpx;
+  color:#BBBBBB;
+}
+.input-list{
+	padding: 0 20rpx;
+	margin: 20rpx 0;
+	background: #fff;
+	border-top: 1rpx solid #ddd;
+	border-bottom: 1rpx solid #ddd;
+}
+.input-list .input-item{
+	padding: 20rpx;
+	line-height: 2;
+	display: flex;
+	font-size: 30rpx;
+	border-top: 1rpx solid #e8e8e8;
+}
+.input-item-label{
+	display: block;
+	width: 5em;
+	color: #666;
+}
+.input-item-content{
+	color: #333;
+	flex:1;
+}
+.group{	
+	width: 100%;
+}
+.group-body{
+	background: #fff;
+	border-top: 1rpx solid #ddd;
+	border-bottom: 1rpx solid #ddd;
+}
+.group-body .input-list{
+	margin: 0;
+	border: none;
+}
+.checkbox{
+  display:flex;
+}
+.para{
+  display:flex;
+  line-height: 2.5
+}
+.paraname{
+  flex:1;
+  width:60%
+}
+.inputpara{
+  border:1px #ddd solid;
+  display:block;
+}
+.btn-blue{
+  width: 90%;
+	line-height: 88rpx;
+  background: #2fcc85;
+	color: #fff;
+  margin-top: 20px;
+}
+.other-button-hover {
+  background-color: rgba(0, 0, 0, 0.1); 
+  opacity: 0.7;
+}
+/* pages/infoInput/infoInput.wxss */

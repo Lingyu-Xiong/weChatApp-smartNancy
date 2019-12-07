@@ -1,0 +1,39 @@
+<view class="picture">
+  <image src='../../images/inputweight.png'></image>
+</view>
+
+<!--<view class='input'>
+  <input type='number' bindinput='getWeight' auto-focus='true'></input>
+</view>-->
+
+<picker range="{{weights}}" value="{{index}}" bindchange="bindChange">
+  <view class="input"><view>{{weights[index]}}kg</view></view>
+</picker>
+<!--
+<view>
+<view class="input">
+<view bindtap="open">{{weight[index]}}kg</view>
+</view>
+
+<view wx:if="{{condition}}" class="jobpicker">
+  <picker-view indicator-style="height: 30px;" style="width: 100%; height: 200px;" value="{{index}}" bindchange="bindChange"class="jobbody"> 
+  <view class="jobheader">
+      <view bindtap="open" class="job-cancel">取消</view>
+      <view bindtap="open" class="job-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{weight}}" style="font-size:16px;text-align:center">{{weight[index]}}kg</view>
+    </picker-view-column>
+  </picker-view>
+  </view>
+</view>
+-->
+
+<view class='tips'>
+  <text>您的体重</text>
+</view>
+
+
+
+<!--<view wx:if="{{!condition}}" class='next' bindtap='questionsnext'>下一步</view>-->
+<view class="nextbtn"><image mode="aspectFit" src="../../images/next.png" style="width:30%;height:100px" wx:if="{{!condition}}" bindtap='questionsnext'></image></view>

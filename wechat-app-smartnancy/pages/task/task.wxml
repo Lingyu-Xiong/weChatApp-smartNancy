@@ -1,0 +1,8 @@
+<view>
+<checkbox-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{items}}">
+      <checkbox color="{{Color}}" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </checkbox-group>
+  <button class="btn-blue" hover-class="other-button-hover" bindtap="">选好啦！</button>
+  </view>

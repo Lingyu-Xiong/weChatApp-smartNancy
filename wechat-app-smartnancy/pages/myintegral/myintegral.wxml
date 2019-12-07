@@ -1,0 +1,27 @@
+<view class="weui-cells weui-cells_after-title" style="margin-bottom:10px;">
+  <view class="weui-cell" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+          <image src="../../images/newintegral.png" style="margin-right: 15px;width:20px; height:20px;vertical-align:middle"></image>
+    </view>
+    <view class="weui-cell__bd cell-title">新增积分</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+          <image src="../../images/allintegral.png" style="margin-right: 15px;width:20px; height: 20px;vertical-align:middle"></image>
+    </view>
+    <view class="weui-cell__bd cell-title">总积分</view>
+    <view class="weui-cell__ft" style="font-size: 0">
+      <view style="display: inline-block;vertical-align:middle; font-size: 17px;">{{integralnumber}}积分</view>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+          <image src="../../images/rechargeintegral.png" style="margin-right: 15px;width:20px; height: 20px;vertical-align:middle"></image>
+    </view> 
+    <view class="weui-cell__bd cell-title">积分兑换</view>
+      <view class="weui-cell__ft">
+          <view class="weui-vcode-btn" style='color:#2fcc85;'>兑换</view>
+      </view>
+  </view>
+</view>

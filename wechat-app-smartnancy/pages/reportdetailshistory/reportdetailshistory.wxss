@@ -1,0 +1,346 @@
+ page{
+  /* background: -webkit-linear-gradient(#e5f7fe,#f6fcff);  Safari 5.1 - 6.0  */
+  /* background: -o-linear-gradient(#e5f7fe,#f6fcff);  Opera 11.1 - 12.0  */
+  /* background: -moz-linear-gradient(#e5f7fe,#f6fcff);  Firefox 3.6 - 15  */
+  /* background: linear-gradient(#e5f7fe,#f6fcff);  标准的语法（必须放在最后）  */
+} 
+
+.toptip{
+  padding: 10px 15px;
+  height: 40px;
+}
+
+.clock{
+  float: right;
+  border: 1px solid #2fcc85;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.clock text{
+  vertical-align: middle;
+  color: #2fcc85;
+  font-size: 14px;
+}
+
+.weui-cells::after{
+  bottom: unset;
+}
+
+.weui-cells_show{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}.kind-list__item-bd{height:0;overflow:hidden}.kind-list__item-bd_show{height:auto}
+
+.pictures{
+  overflow-y: auto;
+  background: -webkit-linear-gradient(#e5f7fe,#f6fcff); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#e5f7fe,#f6fcff); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#e5f7fe,#f6fcff); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#e5f7fe,#f6fcff); /* 标准的语法（必须放在最后） */
+}
+
+.toptitle{
+  font-size:15px;
+  padding-top:10px;
+  position: relative;
+  text-align: center;
+}
+
+.toptitle image{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 10px;
+}
+
+.canvas{
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+
+.subcanvas{
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  margin-left: -120px;
+  top: -5px;
+}
+
+.historyscore{
+  position: absolute;
+  left: 10px;
+  top: 135px;
+}
+
+.historyscore image{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.historyscore text{
+  color: #7cb5ec;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.contact{
+  position: absolute;
+  right: 10px;
+  top:180px;
+  color: #7cb5ec;
+  padding: 0;
+  border: 0;
+  background: unset;
+  line-height: unset;
+}
+
+.contacthover{
+  position: absolute;
+  right: 10px;
+  top:180px;
+  color: #7cb5ec;
+  padding: 0;
+  border: 0;
+  background: rgba(0,0,0,0.1);
+  line-height: unset;
+  opacity: 0.7;
+}
+
+button::after{
+  width: 0;
+  left: unset;
+  display: none;
+}
+
+.contact image{
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.contact text{
+  font-size: 13px;
+}
+
+.title{
+  font-size: 16px;
+}
+
+.user{
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.user image{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.allpic{
+  width: 100%;
+  height: 1220px;
+  position: relative;
+}
+
+.onegrid{
+  background: #fff;
+  padding: 10px 10px 0 10px;
+}
+
+.left{
+  margin: 10px 5px 10px 0;
+}
+
+.right{
+  margin: 10px 0 10px 5px;
+}
+
+.topdescription{
+  text-align: center;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.leftimage{
+  display: inline-block;
+  width: 30px;
+}
+
+.leftimage image{
+  width: 30px;
+  height:30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+
+.score{
+  width: 100%;
+  height: 10px;
+  background: #f8f8f8;
+  position: relative;
+  display: inline-block;
+  border-right: 2px solid #999;
+}
+
+.scoretext{
+  font-size:18px;
+  position:absolute;
+  right:0;
+  top:-5px;
+}
+
+.redtext{
+  color: #fd666d;
+}
+
+.yellowtext{
+  color: #ffcd00;
+}
+
+.greentext{
+  color: #2fcc85;
+}
+
+.total{
+  position: absolute;
+  top: 50px;
+  right: -5px;
+  color: #999;
+  font-size: 14px;
+}
+
+.red{
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0 10px 10px 0;
+  height: 10px;
+  background: #fd666d;
+}
+
+.yellow{
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0 10px 10px 0;
+  height: 10px;
+  background: #ffcd00;
+}
+
+.green{
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0 10px 10px 0;
+  height: 10px;
+  background: #2fcc85;
+}
+
+.morecontent{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.morecontent image{
+  width: 20px;
+  height: 20px;
+}
+
+
+.title{
+  padding: 10px 20px 0 20px;
+  font-size: 16px;
+  color: #7cb5ec;
+}
+
+/* 弹出框 */
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 560rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #fff;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 30rpx;
+  font-size: 16px;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-title image{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.modal-title text{
+  vertical-align: middle;
+}
+
+.modal-tip{
+  padding: 5px 32rpx 0 32rpx;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 40rpx 30rpx;
+}
+
+.modal-input image{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.modal-input text{
+  font-size: 30rpx;
+  vertical-align: middle;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-confirm {
+  color: #ec5300;
+  text-align: center;
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title"></view>
+    <view class="page__desc">历史建议</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="kind-list__item">
+          <view id="{{item.qrId}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="weui-form-preview__label">
+                <image src='../../images/date.png'></image>
+                <text>测试时间</text>
+              </view>
+            <view class="weui-flex__item weui-form-preview__value">{{item.claimTime}}</view>
+            <image class="kind-list__img" src="../../images/{{item.open?'next-down':'next-right'}}.png"></image>
+          </view>
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+              <block wx:for="{{item.reco}}"  wx:key="*this">
+                <view class="weui-cell weui-cell_access">
+                  <view class="weui-cell__bd">{{item.task}}</view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="page__ft">
+
+  </view>
+  <!--
+  <view class="dots">
+  <canvas canvas-id="myCanvas" style="border: 1px solid;width:60px;height:80px"/>
+  </view>-->
+</view>

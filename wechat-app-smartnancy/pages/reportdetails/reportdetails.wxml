@@ -1,0 +1,440 @@
+
+<view class='pictures' canvas-id='allcontent' style='width:100%;min-height:{{windowheight}}px'>
+  <!-- <view class='user'>
+    <image src='{{userpic}}'></image>
+    <view>{{username}}</view>
+  </view> -->
+  <view class='toptitle'>
+    <text>综合评分</text>
+    <button class='contact' style='top:5px;right:0;float:right' open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="onGotUserInfo"><image src='../../images/share.png' style='position:unset'></image></button>
+  </view>
+  <canvas canvas-id='canvas' class='canvas'>
+    <!-- <canvas canvas-id="oneRingCanvas" class="subcanvas"></canvas> -->
+    <ec-canvas id="mychart-dom-gauge" class="subcanvas" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+  </canvas>
+    <!-- <navigator url='../timeline/timeline' class='historyscore'>
+      <image src='../../images/history.png'></image>
+      <text>历史记录</text>
+    </navigator> -->
+   <button class='contact' hover-class='contacthover' open-type='contact' session-from="weapp">
+      <image src='../../images/dietdoctor.png'></image>
+       <text>在线营养师</text> 
+    </button>
+  <view class="weui-panel__bd" style='background:#fff;margin-top:10px'>
+    <view class="weui-media-box weui-media-box_appmsg weui-cell_access">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <!-- <image class="weui-media-box__thumb" style='width:40px;height:40px;border-radius:50%;vertical-align:middle' src="{{userpic}}" /> -->
+            <open-data class="weui-media-box__thumb" style='width:40px;height:40px;border-radius:50%;vertical-align:middle' type="userAvatarUrl"></open-data>
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <!-- <view class="weui-media-box__title">{{username}}</view> -->
+            <open-data class="weui-media-box__title" type="userNickName" lang="zh_CN"></open-data>
+            <view class="weui-media-box__desc">您在智能Nancy上完成了第{{times}}次测试</view>
+        </view>
+          <view class='weui-cell__ft'>
+           <!-- style='background:#2fcc85;color:#fff;font-size:13px;width:50px;height:50px;text-align:center;line-height:25px' -->
+           <!--<image style='width:65px;height:65px' src="../../images/recobottom.png" bindtap='getreco'></image>-->
+          <!-- <text>查看\n建议</text> -->
+         </view>  
+    </view>
+  </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="onegrid left">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/healthscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>
+                    身体指标健康度
+                    <text class="scoretext redtext" wx:if="{{healthscore==0}}"></text>
+                    <text class="scoretext redtext" wx:elif="{{healthscore<60}}">{{healthscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{healthscore<80}}">{{healthscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{healthscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{healthscore<60}}' style='width:{{healthscore}}%'></view>
+                      <view class='yellow' wx:elif='{{healthscore<80}}' style='width:{{healthscore}}%'></view>
+                      <view class='green' wx:else style='width:{{healthscore}}%'></view>
+                      
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="health" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="onegrid right">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/diseasescore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>慢病风险度
+                    <text class="scoretext greentext" wx:if="{{diseasescore==0}}"></text>
+                    <text class="scoretext greentext" wx:elif="{{diseasescore<60}}">{{diseasescore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{diseasescore<80}}">{{diseasescore}}</text>
+                    <text class="scoretext redtext" wx:else>{{diseasescore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='green' wx:if='{{diseasescore<60}}' style='width:{{diseasescore}}%'></view>
+                      <view class='yellow' wx:elif='{{diseasescore<80}}' style='width:{{diseasescore}}%'></view>
+                      <view class='red' wx:else style='width:{{diseasescore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="disease" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="onegrid left">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/dietscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>饮食健康度
+                    <text class="scoretext redtext" wx:if="{{dietscore==0}}"></text>
+                    <text class="scoretext redtext" wx:elif="{{dietscore<60}}">{{dietscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{dietscore<80}}">{{dietscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{dietscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{dietscore<60}}' style='width:{{dietscore}}%'></view>
+                      <view class='yellow' wx:elif='{{dietscore<80}}' style='width:{{dietscore}}%'></view>
+                      <view class='green' wx:else style='width:{{dietscore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="diet" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="onegrid right">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/bodyscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>身体活跃度
+                    <text class="scoretext redtext" wx:if="{{bodyscore==0}}"></text>
+                    <text class="scoretext redtext" wx:elif="{{bodyscore<60}}">{{bodyscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{bodyscore<80}}">{{bodyscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{bodyscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{bodyscore<60}}' style='width:{{bodyscore}}%'></view>
+                      <view class='yellow' wx:elif='{{bodyscore<80}}' style='width:{{bodyscore}}%'></view>
+                      <view class='green' wx:else style='width:{{bodyscore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="body" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+    
+  </view>
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <view class="onegrid left">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/doctorscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>骨骼健康度
+                    <text class="scoretext redtext" wx:if="{{complyscore==0}}"></text>
+                    <text class="scoretext redtext" wx:elif="{{complyscore<60}}">{{complyscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{complyscore<80}}">{{complyscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{complyscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{complyscore<60}}' style='width:{{complyscore}}%'></view>
+                      <view class='yellow' wx:elif='{{complyscore<80}}' style='width:{{complyscore}}%'></view>
+                      <view class='green' wx:else style='width:{{complyscore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="doctor" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+    <view class="weui-flex__item">
+      <view class="onegrid right">
+        <view class="weui-panel__bd" style='background:#fff;'>
+          <view class="weui-media-box weui-media-box_appmsg  weui-cell_access" style='padding:0'>
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:30px;height:30px;margin-right:5px;'>
+                  <image class="weui-media-box__thumb" style='width:30px;height:30px;' src="../../images/dietdoctorscore.png" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title" style='font-size:13px'>健康素养度
+                    <text class="scoretext redtext" wx:if="{{literacyscore==0}}"></text>
+                    <text class="scoretext redtext" wx:elif="{{literacyscore<60}}">{{literacyscore}}</text>
+                    <text class="scoretext yellowtext" wx:elif="{{literacyscore<80}}">{{literacyscore}}</text>
+                    <text class="scoretext greentext" wx:else>{{literacyscore}}</text>
+                  </view>
+                  <view class="weui-media-box__desc" style='margin-top:10px;border-right:2px solid #999'>
+                    <view class='score'>
+                      <view class='red' wx:if='{{literacyscore<60}}' style='width:{{literacyscore}}%'></view>
+                      <view class='yellow' wx:elif='{{literacyscore<80}}' style='width:{{literacyscore}}%'></view>
+                      <view class='green' wx:else style='width:{{literacyscore}}%'></view>
+                    </view>
+                    <text class="total">100</text>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class='morecontent'><image src='../../images/morecontent.png' id="literacy" bindtap='morecontent'></image></view>
+      </view>
+    </view>
+  </view>  
+  <!--<view class='title'>历史记录</view>
+  <canvas canvas-id="areaCanvas" style='margin:20px auto;height:200px;width:100%'></canvas>   -->
+  <!-- <canvas class='allpic' canvas-id='backgroundcanvas'>
+     <canvas canvas-id="oneRingCanvas" class="canvas right"></canvas>
+    <canvas canvas-id="twoRingCanvas" class="canvas left" style='top:170px'></canvas>
+    <canvas canvas-id="threeRingCanvas" class="canvas right" style='top:340px'></canvas>
+    <canvas canvas-id="fourRingCanvas" class="canvas left" style='top:510px'></canvas>
+    <canvas canvas-id="fiveRingCanvas" class="canvas right" style='top:680px'></canvas>
+    <canvas canvas-id="sixRingCanvas" class="canvas left" style='top:850px'></canvas>
+    <canvas canvas-id="sevenRingCanvas" class="canvas right" style='top:1020px'></canvas>
+  </canvas>
+     <canvas canvas-id="lineCanvas" style='margin:0 auto;height:200px;width:100%'></canvas> -->
+     
+<view class="nextbtn"><button class="recobtn" bindtap='getreco'>查看建议</button></view>
+</view>
+<canvas  canvas-id="shareImg" style="width:100%;height:{{windowheight}}px;position:absolute;left:-10000px;"></canvas>
+<canvas  canvas-id="shareImgBackground" style="width:100%;height:{{windowheight}}px;position:absolute;left:-10000px;"></canvas>
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title" wx:if="{{theme=='health'}}">
+    <image src='../../images/healthscore.png'></image>
+    <text>身体指标健康度</text>
+  </view>
+  <view class="modal-title" wx:if="{{theme=='disease'}}">
+    <image src='../../images/diseasescore.png'></image>
+    <text>慢病风险度</text>
+  </view>
+  <view class="modal-title" wx:if="{{theme=='doctor'}}">
+    <image src='../../images/doctorscore.png'></image>
+    <text>骨骼健康度</text>
+  </view>
+  <view class="modal-title" wx:if="{{theme=='diet'}}">
+    <image src='../../images/dietscore.png'></image>
+    <text>饮食健康度</text>
+  </view>
+  <view class="modal-title" wx:if="{{theme=='body'}}">
+    <image src='../../images/bodyscore.png'></image>
+    <text>身体活跃度</text>
+  </view>
+  <view class="modal-title" wx:if="{{theme=='literacy'}}">
+    <image src='../../images/dietdoctorscore.png'></image>
+    <text>健康素养度</text>
+  </view>
+  <view class='modal-tip' wx:if="{{theme=='health'}}">-现阶段身体指标的健康程度</view>
+  <view class='modal-tip' wx:if="{{theme=='disease'}}">-未来5-10年患慢病的风险程度</view>
+  <view class='modal-tip' wx:if="{{theme=='doctor'}}">-骨骼状态是否良好</view>
+  <view class='modal-tip' wx:if="{{theme=='diet'}}">-饮食状况是否健康</view>
+  <view class='modal-tip' wx:if="{{theme=='body'}}">-是否保持足量规律运动</view>
+  <view class='modal-tip' wx:if="{{theme=='literacy'}}">-健康知识知晓水平</view>
+  <view class="modal-content" wx:if="{{theme=='health'}}">
+    <view class="modal-input" wx:if='{{healthscore<40}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>您的身体已响起警报，小毛病也请及早就医寻诊!</text>
+    </view>
+    <view class="modal-input" wx:elif='{{healthscore<60}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>您的身体已在悄悄发生变化，请提高警惕，防患于未然！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{healthscore<80}}'>
+      <image src='../../images/yellowwarn.png'></image>
+      <text>您的身体健康状况还不错，继续加油！</text>
+    </view>
+    <view class="modal-input" wx:else>
+      <image src='../../images/greenwarn.png'></image>
+      <text>健康是最大的财富，而您正拥有它，恭喜！</text>
+    </view>
+    <view class='score'>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:if="{{healthscore==0}}"></text>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:elif="{{healthscore<60}}">{{healthscore}}</text>
+      <text class="scoretext yellowtext" style='top:-30px;right:-8px' wx:elif="{{healthscore<80}}">{{healthscore}}</text>
+      <text class="scoretext greentext" style='top:-30px;right:-8px' wx:else>{{healthscore}}</text>
+      <view class='red' wx:if='{{healthscore<60}}' style='width:{{healthscore}}%'></view>
+      <view class='yellow' wx:elif='{{healthscore<80}}' style='width:{{healthscore}}%'></view>
+      <view class='green' wx:else style='width:{{healthscore}}%'></view>
+      <text class="total" style='top:10px;right:-8px'>100</text>
+    </view>
+  </view>
+  <view class="modal-content" wx:if="{{theme=='disease'}}">
+    <view class="modal-input" wx:if='{{diseasescore<40}}'>
+      <image src='../../images/greenwarn.png'></image>
+      <text>您患慢病的风险程度低，基因和生活习惯都很棒，继续保持！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{diseasescore<60}}'>
+      <image src='../../images/greenwarn.png'></image>
+      <text>您患慢病的风险程度较低，良好健康习惯仍需时刻践行！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{diseasescore<80}}'>
+      <image src='../../images/yellowwarn.png'></image>
+      <text>您患慢病的风险程度偏高，请提高警惕，关注身体的小变化！</text>
+    </view>
+    <view class="modal-input" wx:else>
+      <image src='../../images/redwarn.png'></image>
+      <text>您患慢病的风险程度非常高，请定期体检，尽早防控！</text>
+    </view>
+    <view class='score'>
+      <text class="scoretext greentext" style='top:-30px;right:-8px' wx:if="{{diseasescore==0}}"></text>
+      <text class="scoretext greentext" style='top:-30px;right:-8px' wx:elif="{{diseasescore<60}}">{{diseasescore}}</text>
+      <text class="scoretext yellowtext" style='top:-30px;right:-8px' wx:elif="{{diseasescore<80}}">{{diseasescore}}</text>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:else>{{diseasescore}}</text>
+      <view class='green' wx:if='{{diseasescore<60}}' style='width:{{diseasescore}}%'></view>
+      <view class='yellow' wx:elif='{{diseasescore<80}}' style='width:{{diseasescore}}%'></view>
+      <view class='red' wx:else style='width:{{diseasescore}}%'></view>
+      <text class="total" style='top:10px;right:-8px'>100</text>
+    </view>
+  </view>
+  <view class="modal-content" wx:if="{{theme=='doctor'}}">
+    <view class="modal-input" wx:if='{{complyscore<40}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>很不幸，您患骨质疏松的风险很高，请定期检查，注意钙和维生素D的补充！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{complyscore<60}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>您患骨折疏松的风险较高，请保证钙和维生素D的充足摄入！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{complyscore<80}}'>
+      <image src='../../images/yellowwarn.png'></image>
+      <text>您的骨骼状态还不错，小问题仍要注意，继续加油！</text>
+    </view>
+    <view class="modal-input" wx:else>
+      <image src='../../images/greenwarn.png'></image>
+      <text>真不错，您的骨骼状态很棒，请继续保持良好习惯！</text>
+    </view>
+    <view class='score'>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:if="{{complyscore==0}}"></text>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:elif="{{complyscore<60}}">{{complyscore}}</text>
+      <text class="scoretext yellowtext" style='top:-30px;right:-8px' wx:elif="{{complyscore<80}}">{{complyscore}}</text>
+      <text class="scoretext greentext" style='top:-30px;right:-8px' wx:else>{{complyscore}}</text>
+      <view class='red' wx:if='{{complyscore<60}}' style='width:{{complyscore}}%'></view>
+      <view class='yellow' wx:elif='{{complyscore<80}}' style='width:{{complyscore}}%'></view>
+      <view class='green' wx:else style='width:{{complyscore}}%'></view>
+      <text class="total" style='top:10px;right:-8px'>100</text>
+    </view>
+  </view>
+  <view class="modal-content" wx:if="{{theme=='diet'}}">
+    <view class="modal-input" wx:if='{{dietscore<40}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>很遗憾，您的饮食状况非常糟糕，点击“查看建议”看看Nancy为您定制的健康建议！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{dietscore<60}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>您的饮食状况处在中等偏下水平，点击“查看建议”查收Nancy为您定制的健康建议！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{dietscore<80}}'>
+      <image src='../../images/yellowwarn.png'></image>
+      <text>您的饮食状况还不错，高于平均水平，点击“查看建议”查收Nancy的提高计划吧！</text>
+    </view>
+    <view class="modal-input" wx:else>
+      <image src='../../images/greenwarn.png'></image>
+      <text>恭喜您，您的饮食状况超过大多数人！快点击“查看建议”查收Nancy给您准备的独家健康小锦囊吧！</text>
+    </view>
+    <view class='score'>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:if="{{dietscore==0}}"></text>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:elif="{{dietscore<60}}">{{dietscore}}</text>
+      <text class="scoretext yellowtext" style='top:-30px;right:-8px' wx:elif="{{dietscore<80}}">{{dietscore}}</text>
+      <text class="scoretext greentext" style='top:-30px;right:-8px' wx:else>{{dietscore}}</text>
+      <view class='red' wx:if='{{dietscore<60}}' style='width:{{dietscore}}%'></view>
+      <view class='yellow' wx:elif='{{dietscore<80}}' style='width:{{dietscore}}%'></view>
+      <view class='green' wx:else style='width:{{dietscore}}%'></view>
+      <text class="total" style='top:10px;right:-8px'>100</text>
+    </view>
+  </view>
+  <view class="modal-content" wx:if="{{theme=='body'}}">
+    <view class="modal-input" wx:if='{{bodyscore<40}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>很遗憾，您平时太缺乏运动，快动起来吧！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{bodyscore<60}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>您能动起来还是不错的，但运动量偏少，再加把油！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{bodyscore<80}}'>
+      <image src='../../images/yellowwarn.png'></image>
+      <text>您的运动量已超过大多数人，请再接再厉！</text>
+    </view>
+    <view class="modal-input" wx:else>
+      <image src='../../images/greenwarn.png'></image>
+      <text>您很棒，健康更青睐爱运动的人，请继续坚持！</text>
+    </view>
+    <view class='score'>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:if="{{bodyscore==0}}"></text>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:elif="{{bodyscore<60}}">{{bodyscore}}</text>
+      <text class="scoretext yellowtext" style='top:-30px;right:-8px' wx:elif="{{bodyscore<80}}">{{bodyscore}}</text>
+      <text class="scoretext greentext" style='top:-30px;right:-8px' wx:else>{{bodyscore}}</text>
+      <view class='red' wx:if='{{bodyscore<60}}' style='width:{{bodyscore}}%'></view>
+      <view class='yellow' wx:elif='{{bodyscore<80}}' style='width:{{bodyscore}}%'></view>
+      <view class='green' wx:else style='width:{{bodyscore}}%'></view>
+      <text class="total" style='top:10px;right:-8px'>100</text>
+    </view>
+  </view>
+  <view class="modal-content" wx:if="{{theme=='literacy'}}">
+    <view class="modal-input" wx:if='{{literacyscore<40}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>真可惜，您的健康知识太贫乏了，知识武装大脑是迈向健康的第一步！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{literacyscore<60}}'>
+      <image src='../../images/redwarn.png'></image>
+      <text>您了解有限的健康知识，离合格还远远不够，快奋起直追吧！</text>
+    </view>
+    <view class="modal-input" wx:elif='{{literacyscore<80}}'>
+      <image src='../../images/yellowwarn.png'></image>
+      <text>您了解的健康知识比较广泛，路漫漫其修远兮，再接再厉！</text>
+    </view>
+    <view class="modal-input" wx:else>
+      <image src='../../images/greenwarn.png'></image>
+      <text>棒极了，您拥有满满健康知识，下一步行动起来吧！</text>
+    </view>
+    <view class='score'>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:if="{{literacyscore==0}}"></text>
+      <text class="scoretext redtext" style='top:-30px;right:-8px' wx:elif="{{literacyscore<60}}">{{literacyscore}}</text>
+      <text class="scoretext yellowtext" style='top:-30px;right:-8px' wx:elif="{{literacyscore<80}}">{{literacyscore}}</text>
+      <text class="scoretext greentext" style='top:-30px;right:-8px' wx:else>{{literacyscore}}</text>
+      <view class='red' wx:if='{{literacyscore<60}}' style='width:{{literacyscore}}%'></view>
+      <view class='yellow' wx:elif='{{literacyscore<80}}' style='width:{{literacyscore}}%'></view>
+      <view class='green' wx:else style='width:{{literacyscore}}%'></view>
+      <text class="total" style='top:10px;right:-8px'>100</text>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>

@@ -1,0 +1,113 @@
+/**index.wxss**/
+page{
+  background-color: #f8f8f8;
+}
+
+.topSearch{
+  padding: 10px 15px;
+}
+
+picker{
+  display: inline-block;
+}
+
+.picker image{
+  width: 15px;
+  height: 15px;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+.new-btn{
+  padding: 5px 15px;
+  color: #fff;
+  background-color: #2fcc85;
+  float: right;
+  border-radius: 5px;
+  font-size: 10pt;
+}
+
+.reports{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 12px #888;
+  margin: 15px auto;
+  padding: 10px;
+}
+
+.reports-active{
+  box-shadow: 2px 2px 20px #888;
+}
+
+.reportsColor{
+  width: 50px;
+  height: 2px;
+  margin-left: 15px;
+}
+
+.green{
+  background-color: #2fcc85;
+}
+
+.red{
+  background-color: red;
+}
+
+.weui-form-preview{
+  position: unset;
+}
+
+.weui-form-preview__label image{
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.weui-form-preview__label text{
+  vertical-align: middle;
+}
+
+.textgreen{
+  color: #2fcc85;
+}
+
+.textred{
+  color: red;
+}
+
+.makeactive{
+  color: #888;
+  float: left;
+}
+
+.makeactive image{
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.makeactive text{
+  vertical-align: middle;
+}
+
+.details{
+  color: #888;
+  float: right;
+}
+
+.details image{
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.details text{
+  vertical-align: middle;
+}
+
+.makeactive_active,.details_active{
+  color: #2fcc85;
+}

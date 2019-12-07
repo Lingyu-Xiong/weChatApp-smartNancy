@@ -1,0 +1,62 @@
+page{
+  background: -webkit-linear-gradient(#e5f7fe, #fff); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#e5f7fe, #fff); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#e5f7fe, #fff); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#e5f7fe, #fff); /* 标准的语法（必须放在最后） */
+}
+
+.recommendations{
+  padding: 10px 15px;
+}
+
+.weui-navbar{
+  border-bottom: 0;
+}
+
+.weui-tab__content{
+  padding: 10px 0;
+}
+
+.onetask{
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.step{
+  height: 5px;
+  display: inline-block; 
+  background-color: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid #888;
+}
+
+.leftstep{
+  height: 5px;
+  display: inline-block; 
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px 0 0 5px;
+  border-right: 1px solid #888;
+}
+
+.rightstep{
+  height: 5px;
+  display: inline-block; 
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0 5px 5px 0;
+}
+
+.complete{
+  background-color: #2fcc85;
+}
+
+.grades{
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.weui-cells::after , .weui-cells::before , .weui-cell::before{
+  right: unset;
+}
